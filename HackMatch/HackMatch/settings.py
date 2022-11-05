@@ -80,7 +80,7 @@ DATABASES={
       'USER':'DESKTOP-4D44HQS\amber',
       'PASSWORD':'hacknc',
       'HOST':'SQLEXPRESS',
-      'PORT':'',
+      'PORT':'1433',
    }
 }
 
