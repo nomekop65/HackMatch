@@ -1,0 +1,125 @@
+body{
+  background: linear-gradient( 90deg, white 15%, rgba(51,141,202,0.9) 85% );
+  margin: 0;
+}
+.headerDiv{
+  display: flex;
+  width: 1220px;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+.dropDown{
+  display: inline-block;
+  margin-left: 5px;
+
+}
+.showImg{
+  display: inline-block;
+  justify-content: center;
+  width: 1000px;
+}
+.registerLink{
+  display: inline-block;
+  margin-left: 10px;
+}
+.logo{
+  width: 250px;
+  height: 150px;
+  display: inline-block;
+  margin-left: 57px;
+}
+.registerBtn{
+  background-color: black;
+  color: white;
+  width: 150px;
+  padding: 5px;
+  margin-top: 16px;
+  margin-left: -10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 20px rgb(244, 191, 17);
+  font-size: 17px;
+  font-weight: 500;
+}
+.registerBtn:hover{
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  transition: 0.4s;
+}
+.registerBtn:active, .dropDownButton:active{
+ opacity: 0.15;
+}
+.dropDownButton{
+  background-color: transparent;
+  border-width: 0px;
+  width:  50px;
+  height: 45px;
+  padding: 5px;
+}
+.dropDownButton:hover{
+  cursor: pointer;
+  background-color: rgba(0,0,0, 0.08);
+  color: white;
+  transition: 0.4s;
+}
+.dropDownImg{
+  width: 35px;
+}
+
+.bodyDiv{
+  margin-top: 70px;
+  width: 1000px;
+  margin-left: 100px;
+}
+.buttons{
+  display: inline-block;
+  margin-left: 65px;
+  
+}
+.eventButton, .findTeamBtn, .logInBtn{
+  width: 130px;
+  padding: 5px;
+  margin-top: 25px;
+  margin-left: 110px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 25px black;
+  font-size: 24px;
+  font-weight: bold;
+}
+.findTeamBtn{
+  width: 195px;
+}
+.eventButton{
+  background-color: rgb(255, 0, 0);
+  color: white;
+}
+.eventButton:hover{
+  color: rgb(255, 0, 0);
+  background-color: white;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.findTeamBtn{
+  background-color: blue;
+  color: white;
+}
+.findTeamBtn:hover{
+  color: blue;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.logInBtn{
+  background-color: rgb(255, 179, 0);
+  color: white;
+}
+.logInBtn:hover{
+  color: rgb(255, 179, 0);
+  background-color: white;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.text{
+  margin-top: 50px;
+  height: 200px;
+}

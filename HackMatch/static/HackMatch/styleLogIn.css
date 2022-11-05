@@ -1,0 +1,45 @@
+body{
+  background: linear-gradient( 90deg, white 15%, rgba(51,141,202,0.9) 85% );
+  margin: 0;
+}
+.goHome{
+  width: 40px;
+  position: absolute;
+  display: inline-block;
+  margin-left: 70px;
+  margin-top: -160px;
+}
+button{
+  margin-top: 50px;
+  margin-left: 215px;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 26px;
+  width: 135px;
+  background-color: rgb(39, 216, 15);
+  border-radius: 19px;
+  border: 0px;
+}
+button:hover{
+  cursor: pointer;
+  background-color: rgba(39, 216, 15, 0.5);
+}
+button:active{
+  opacity: 0.7;
+  transition: 0.1s;
+}
+input{
+  font-size: 24px;
+  padding-top: 10px;
+  right:40px;
+}
+.passwordTextInput{
+  margin-left: 11px;
+}
+.logInContainer{
+  margin-top: 15%;
+  margin-left: 30%;
+  width: 50%;
+  height: 50%;
+  font-size: 50px;
+}
