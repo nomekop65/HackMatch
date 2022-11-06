@@ -110,3 +110,6 @@ def processApiToken(request,token):
             return render(request, 'templates/index.html')
 def index(request):
     return render(request, 'index.html')
+
+def findTeam(request):
+    return render(request,'findTeam.html')
