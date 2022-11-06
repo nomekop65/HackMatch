@@ -23,5 +23,6 @@ urlpatterns = [
     path('login_user/', views.loginUser, name = 'loginRequest'),
     path('register_user/', views.registerUser, name = 'registerRequest'),
     path('submitrequirement/',views.populaterequirement, name='requirementRequest'),
-    path('processapitoken/<str:token>/', views.processapitoken, name = 'apiTokenRequest')
+    path(r'processApiToken/<str:token>/', views.processApiToken),
+
 ]
