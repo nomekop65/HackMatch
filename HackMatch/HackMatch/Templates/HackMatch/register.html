@@ -13,47 +13,44 @@
     <div class="section">
       <div class="input" >
         <P class="textToUser">Please enter your Information: </P>
-        <input class="takeInput" type="text", placeholder="First Name">
-        <input class="takeInput1" type="text", placeholder="Email">
-        <input class="takeInput" type="text", placeholder="Last Name">
-        <input class="takeInput1" type="text", placeholder="Password">
-        <input class="takeInput" type="text", placeholder="College/University">
-        <input class="takeInput1" type="text", placeholder="Confirm Password">
-
-        <input class="takeInput" type="text", placeholder="Grade">
+        <input class="takeInput" type="text", name="firstname", placeholder="First Name">
+        <input class="takeInput1" type="text", name="email", placeholder="Email">
+        <input class="takeInput" type="text", name="lastname", placeholder="Last Name">
+        <input class="takeInput" type="text", name="college/university", placeholder="College/University">
+        <input class="takeInput" type="text", name="grade" placeholder="Grade">
       </div>
       <div class="input">
         <P class="textToUser">Are you a...</P>
-        <input class="choice" type="checkbox">FrontEnd Developer
-        <input class="choice" type="checkbox">BackEnd Developer
+        <input class="choice" type="checkbox" name="userSkills[]" value="fronted">FrontEnd Developer
+        <input class="choice" type="checkbox" name="userSkills[]" value="backend">BackEnd Developer
       </div>
       <div class="input">
         <P class="textToUser">Languages: </P>
         <input type="checkbox">C
-        <input class="space" type="checkbox">C++
-        <input class="space" type="checkbox">Java
-        <input class="space" type="checkbox">JavaScript
-        <input class="space" type="checkbox">Python
+        <input class="space" type="checkbox" name="userSkills[]" value="c++">C++
+        <input class="space" type="checkbox" name="userSkills[]" value="java">Java
+        <input class="space" type="checkbox" name="userSkills[]" value="javascript">JavaScript
+        <input class="space" type="checkbox" name="userSkills[]" value="python">Python
         </div>
         <div class="input">
-        <input class="" type="checkbox">HTML/CSS
-        <input class="space" type="checkbox">C#
-        <input class="space" type="checkbox">PHP
-        <input class="space" type="checkbox">SQL
-        <input class="space" type="checkbox">Ruby
+        <input class="" type="checkbox" name="userSkills[]" value="html/css">HTML/CSS
+        <input class="space" type="checkbox" name="userSkills[]" value="c#">C#
+        <input class="space" type="checkbox" name="userSkills[]" value="php">PHP
+        <input class="space" type="checkbox" name="userSkills[]" value="sql">SQL
+        <input class="space" type="checkbox" name="userSkills[]" value="ruby">Ruby
       </div>
       <div class="input">
         <P class="textToUser">Frameworks: </P>
-        <input class="" type="checkbox">Django
-        <input class="space1" type="checkbox">Flask
-        <input class="space1" type="checkbox">Angular
-        <input class="space1" type="checkbox">React
-        <input class="space1" type="checkbox">Express
+        <input class="" type="checkbox" name="userSkills[]" value="django">Django
+        <input class="space1" type="checkbox" name="userSkills[]" value="flask">Flask
+        <input class="space1" type="checkbox" name="userSkills[]" value="angular">Angular
+        <input class="space1" type="checkbox" name="userSkills[]" value="react">React
+        <input class="space1" type="checkbox" name="userSkills[]" value="express">Express
       </div>
       <div class="input">
         <P class="textToUser">Proficiency level: </P>
-        <input class="choice" type="checkbox">Beginner
-        <input class="choice" type="checkbox">Skilled
+        <input class="choice" type="checkbox" name="userSkills[]" value="beginner">Beginner
+        <input class="choice" type="checkbox" name="userSkills[]" value="skilled">Skilled
       </div>
       <button class="submitButton" value="Submit">Submit Now</button>
     </div>
