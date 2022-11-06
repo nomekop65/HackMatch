@@ -3,55 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="styleRegister.css">
+  <link rel="stylesheet" href="/HackMatch/static/HackMatch/styleRegister.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registor Now &copy;</title>
 </head>
 <body>
-  <a href="index.html"><img class="goHome" src="homeLogo.png" alt=""></a>
-  <div class="section">
-    <div class="input" >
-      <P class="textToUser">Please enter your Information: </P>
-      <input class="takeInput" type="text", placeholder="First Name">
-      <input class="takeInput1" type="text", placeholder="College/University">
-      <input class="takeInput" type="text", placeholder="Last Name">
-      <input class="takeInput1" type="text", placeholder="Email">
-      <input class="takeInput" type="text", placeholder="Grade">
-    </div>
-    <div class="input">
-      <P class="textToUser">Are you a...</P>
-      <input class="choice" type="checkbox">FrontEnd Developer
-      <input class="choice" type="checkbox">BackEnd Developer
-    </div>
-    <div class="input">
-      <P class="textToUser">Languages: </P>
-      <input type="checkbox">C
-      <input class="space" type="checkbox">C++
-      <input class="space" type="checkbox">Java
-      <input class="space" type="checkbox">JavaScript
-      <input class="space" type="checkbox">Python
+  <a href="index.html"><img class="goHome" src="/HackMatch/static/HackMatch/homeLogo.png" alt=""></a>
+  <form action="index.html" method="get">
+    <div class="section">
+      <div class="input" >
+        <P class="textToUser">Please enter your Information: </P>
+        <input class="takeInput" type="text", placeholder="First Name">
+        <input class="takeInput1" type="text", placeholder="Email">
+        <input class="takeInput" type="text", placeholder="Last Name">
+        <input class="takeInput1" type="text", placeholder="Password">
+        <input class="takeInput" type="text", placeholder="College/University">
+        <input class="takeInput1" type="text", placeholder="Confirm Password">
+
+        <input class="takeInput" type="text", placeholder="Grade">
       </div>
       <div class="input">
-      <input class="" type="checkbox">HTML/CSS
-      <input class="space" type="checkbox">C#
-      <input class="space" type="checkbox">PHP
-      <input class="space" type="checkbox">SQL
-      <input class="space" type="checkbox">Ruby
+        <P class="textToUser">Are you a...</P>
+        <input class="choice" type="checkbox">FrontEnd Developer
+        <input class="choice" type="checkbox">BackEnd Developer
+      </div>
+      <div class="input">
+        <P class="textToUser">Languages: </P>
+        <input type="checkbox">C
+        <input class="space" type="checkbox">C++
+        <input class="space" type="checkbox">Java
+        <input class="space" type="checkbox">JavaScript
+        <input class="space" type="checkbox">Python
+        </div>
+        <div class="input">
+        <input class="" type="checkbox">HTML/CSS
+        <input class="space" type="checkbox">C#
+        <input class="space" type="checkbox">PHP
+        <input class="space" type="checkbox">SQL
+        <input class="space" type="checkbox">Ruby
+      </div>
+      <div class="input">
+        <P class="textToUser">Frameworks: </P>
+        <input class="" type="checkbox">Django
+        <input class="space1" type="checkbox">Flask
+        <input class="space1" type="checkbox">Angular
+        <input class="space1" type="checkbox">React
+        <input class="space1" type="checkbox">Express
+      </div>
+      <div class="input">
+        <P class="textToUser">Proficiency level: </P>
+        <input class="choice" type="checkbox">Beginner
+        <input class="choice" type="checkbox">Skilled
+      </div>
+      <button class="submitButton" value="Submit">Submit Now</button>
     </div>
-    <div class="input">
-      <P class="textToUser">Frameworks: </P>
-      <input class="" type="checkbox">Django
-      <input class="space1" type="checkbox">Flask
-      <input class="space1" type="checkbox">Angular
-      <input class="space1" type="checkbox">React
-      <input class="space1" type="checkbox">Express
-    </div>
-    <div class="input">
-      <P class="textToUser">Proficiency level: </P>
-      <input class="choice" type="checkbox">Beginner
-      <input class="choice" type="checkbox">Skilled
-    </div>
-    <button class="submitButton">Submit Now</button>
-  </div>
+  </form>
 </body>
 </html>
