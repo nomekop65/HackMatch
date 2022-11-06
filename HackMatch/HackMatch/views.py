@@ -1,10 +1,11 @@
 from django.db import models
 from django.http import Http404
-from connectivity.models import profile, framework, language, stack
+from HackMatch.models import profile, framework, language, stack
 from django.shortcuts import render,redirect
 import requests
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from forms import CustomUserCreationForm
 from django.forms.models import model_to_dict
 
 def getUserById(profile_id):
@@ -28,18 +29,36 @@ def getAllFrameworks():
 def getAllLanguages():
     return language.objects.all()
 
-# def login_user(request):
+def loginUser(request):
     if request.method == "POST":
-        username = request.POST['username']
+        email = request.POST['email']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request, email=email, password=password)
         if user is not None:
             login(request, user)
-            messages.success(request, 'Logged in successfully.')
-            return render(request, 'movies/index.html')
+            return render(request, 'templates/index.html')
         else:
             # Return an 'invalid login' error message.
             messages.error(request, 'Username/Password invalid')
-            return render(request, 'members/login.html')
+            return render(request, 'templates/login.html')
     else:
-        return render(request, 'members/login.html')
+        return render(request, 'templates/login.html')
+
+def logoutUser(request):
+    logout(request)
+    messages.success(request, 'Logged out successfully.')
+    return render(request, 'movies/index.html')
+
+def registerUser(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Registration Successful!")
+            return render(request, 'templates/index.html')
+    else:
+        form = CustomUserCreationForm()
+    context = {
+        'form':form
+    }
+    return render(request, 'templates/register.html', context)
