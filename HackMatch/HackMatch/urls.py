@@ -21,8 +21,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name = 'index'),
     path('login_user/', views.loginUser, name = 'loginRequest'),
+    path('findTeam/', views.findTeam, name="findTeam"),
     path('register_user/', views.registerUser, name = 'registerRequest'),
-    path('submitrequirement/',views.populaterequirement, name='requirementRequest'),
+    path('submitRequirement/',views.populaterequirement, name='submitRequirement'),
     path(r'processApiToken/<str:token>/', views.processApiToken),
+    path(r'processApiToken/<str:token>/', views.processApiToken),
+
 
 ]
