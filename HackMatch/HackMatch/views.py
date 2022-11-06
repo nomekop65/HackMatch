@@ -108,3 +108,5 @@ def processapitoken(request,token):
         mlhrequest=requests.get(f"https://my.mlh.io/api/v3/user.json?access_token={token}")
         if mlhrequest['data']['id'] == 354004:
             return render(request, 'templates/index.html')
+def index(request):
+    return render(request, 'index.html')
