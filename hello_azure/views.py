@@ -41,20 +41,20 @@ def submitRequirement(request):
         skillList=request.POST.getlist('skills[]')
         skillList=[i.lower() for i in skillList]
         eventmemberjson={
-        0:{"skills":["frontend","java","skilled"],"searchingForMember":True,"username":"a"},
-        15:{"skills":["frontend","backend","python","java","beginner"],"searchingForMember":False,"username":"b"},
-        1:{"skills":["frontend","python","java","django","skilled"],"searchingForMember":True,"username":"c"},
-        34:{"skills":["frontend","backend","python","java","django","skilled"],"searchingForMember":True,"username":"d"},
-        45:{"skills":["frontend","backend","python","java","django","beginner"],"searchingForMember":False,"username":"e"},
-        73:{"skills":["backend","python","java","beginner"],"searchingForMember":True,"username":"f"},
-        19:{"skills":["frontend","java","django","beginner"],"searchingForMember":False,"username":"g"},
-        20:{"skills":["frontend","java","skilled"],"searchingForMember":True,"username":"h"},
-        35:{"skills":["frontend","backend","python","java","beginner"],"searchingForMember":False,"username":"i"},
-        41:{"skills":["backend","python","java","skilled"],"searchingForMember":True,"username":"j"},
-        54:{"skills":["frontend","backend","python","java","django","skilled"],"searchingForMember":True,"username":"k"},
-        65:{"skills":["frontend","backend","python","django","beginner"],"searchingForMember":False,"username":"l"},
-        93:{"skills":["backend","python","java","beginner"],"searchingForMember":True,"username":"m"},
-        29:{"skills":["frontend","django","skilled"],"searchingForMember":True,"username":"o"}
+        0:{"skills":["frontend","java","skilled"],"searchingForMember":True,"username":"John Smith"},
+        15:{"skills":["frontend","backend","python","java","beginner"],"searchingForMember":False,"username":"Jame Smith"},
+        1:{"skills":["frontend","python","java","django","skilled"],"searchingForMember":True,"username":"Jane Smith"},
+        34:{"skills":["frontend","backend","python","java","django","skilled"],"searchingForMember":True,"username":"Bob Bill"},
+        45:{"skills":["frontend","backend","python","java","django","beginner"],"searchingForMember":False,"username":"Bill Jone"},
+        73:{"skills":["backend","python","java","beginner"],"searchingForMember":True,"username":"Richard"},
+        19:{"skills":["frontend","java","django","beginner"],"searchingForMember":False,"username":"Zach"},
+        20:{"skills":["frontend","java","skilled"],"searchingForMember":True,"username":"Hannah"},
+        35:{"skills":["frontend","backend","python","java","beginner"],"searchingForMember":False,"username":"Ian"},
+        41:{"skills":["backend","python","java","skilled"],"searchingForMember":True,"username":"John"},
+        54:{"skills":["frontend","backend","python","java","django","skilled"],"searchingForMember":True,"username":"Juan"},
+        65:{"skills":["frontend","backend","python","django","beginner"],"searchingForMember":True,"username":"Mary"},
+        93:{"skills":["backend","python","java","beginner"],"searchingForMember":True,"username":"Aaron"},
+        29:{"skills":["frontend","django","skilled"],"searchingForMember":True,"username":"Eric"}
         }
         #get user that need team and store in a list
         eventneedteamdict={i:eventmemberjson[i] for i in eventmemberjson if eventmemberjson[i]["searchingForMember"]==True}
@@ -62,8 +62,13 @@ def submitRequirement(request):
         userScoreList=[]
         for userid in eventneedteamdict:  
             requirementMeetList = list(requirementSet.intersection(set(eventneedteamdict[userid]["skills"])))
-            reverseInsort(userScoreList,(userid,requirementMeetList,eventneedteamdict[userid]["username"]), len(requirementMeetList)) #save user id and score as a tuple and sort greatest to lowest
-        context={"users":userScoreList}
+            requirementMeetList=[i.capitalize() for i in requirementMeetList]
+            reverseInsort(userScoreList,[userid,requirementMeetList,[eventneedteamdict[userid]["username"]]], len(requirementMeetList)) #save user id and score as a tuple and sort greatest to lowest
+        
+        stringnumber=["zero","one","two","three","four","five","six","seven","eight","nine","ten"]
+        context={stringnumber[i]:userScoreList[i][2]+userScoreList[i][1] for i in range(0,len(userScoreList))}
+        
+        print(context)
         return render(request,'hello_azure/matching.html',context)
 
 
