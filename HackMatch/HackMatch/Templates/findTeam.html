@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="/HackMatch/static/HackMatch/styleFindTeam.css">
+  <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1AEgvvgEVCrsA6s3NzGRnkMSwXUPEKS1R">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Find your Team</title>
 </head>
 <body>
   <body>
-    <a href="index.html"><img class="goHome" src="/HackMatch/static/HackMatch/homeLogo.png" alt=""></a>
+    <a href="index.html"><img class="goHome" src="https://drive.google.com/uc?export=view&id=1fqHaoxypKFKDwmWsS_m65kgfSDzfbpSO" alt=""></a>
     <div class="section">
       <div class="input" >
         <P class="textToUser1">Find the right teammates for you!</P>
       </div>
-      <form action="{% url 'submitRequirement'%}" method="post">
-        {% csrf_token %}
+      <form action="{% url 'submitrequirement'%}" method="post">
         <div class="input">
           <P class="textToUser">Are you looking for a...</P>
           <input class="choice" type="checkbox" name="skills[]" value="FrontEnd">FrontEnd Developer
