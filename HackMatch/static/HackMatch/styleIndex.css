@@ -26,7 +26,7 @@ body{
   width: 250px;
   height: 150px;
   display: inline-block;
-  margin-left: 57px;
+  margin-left: 80px;
 }
 .registerBtn{
   background-color: black;
@@ -77,10 +77,10 @@ body{
   
 }
 .eventButton, .findTeamBtn, .logInBtn{
-  width: 130px;
+  width: 200px;
   padding: 5px;
   margin-top: 25px;
-  margin-left: 110px;
+  margin-left: 100px;
   border-radius: 5px;
   box-shadow: 1px 1px 25px black;
   font-size: 24px;
