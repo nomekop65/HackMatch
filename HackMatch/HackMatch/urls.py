@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login_user/', views.loginUser, name = 'loginRequest'),
+    path('register_user/', views.registerUser, name = 'registerRequest'),
+    path('submitrequirement/',views.populaterequirement, name='requirementRequest'),
+    path('processapitoken/<str:token>/', views.processapitoken, name = 'apiTokenRequest')
 ]
