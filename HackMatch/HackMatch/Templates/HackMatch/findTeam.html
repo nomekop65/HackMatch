@@ -17,33 +17,33 @@
       <form action="{% url 'submitrequirement'%}" method="post">
         <div class="input">
           <P class="textToUser">Are you looking for a...</P>
-          <input class="choice" type="checkbox">FrontEnd Developer
-          <input class="choice" type="checkbox">BackEnd Developer
+          <input class="choice" type="checkbox" name="skills[]" value="FrontEnd">FrontEnd Developer
+          <input class="choice" type="checkbox" name="skills[]" value="BackEnd">BackEnd Developer
           <p class="SPAC"></p>
         </div>
         <div class="input">
           <P class="textToUser">What languages should your new teammate be proficient in?</P>
           <input type="checkbox">C
-          <input class="space" type="checkbox">C++
-          <input class="space" type="checkbox">Java
-          <input class="space" type="checkbox">JavaScript
-          <input class="space" type="checkbox">Python
+          <input class="space" type="checkbox" name="skills[]" value="C++">C++
+          <input class="space" type="checkbox" name="skills[]" value="Java">Java
+          <input class="space" type="checkbox" name="skills[]" value="JavaScript">JavaScript
+          <input class="space" type="checkbox" name="skills[]" value="Python">Python
           </div>
           <div class="input">
           <input class="" type="checkbox">HTML/CSS
-          <input class="space" type="checkbox">C#
-          <input class="space" type="checkbox">PHP
-          <input class="space" type="checkbox">SQL
-          <input class="space" type="checkbox">Ruby
+          <input class="space" type="checkbox" name="skills[]" value="C#">C#
+          <input class="space" type="checkbox" name="skills[]" value="PHP">PHP
+          <input class="space" type="checkbox" name="skills[]" value="SQL">SQL
+          <input class="space" type="checkbox" name="skills[]" value="Ruby">Ruby
           <p class="SPAC"></p>
         </div>
         <div class="input">
           <P class="textToUser">What Frameworks should they know? </P>
-          <input class="" type="checkbox">Django
-          <input class="space1" type="checkbox">Flask
-          <input class="space1" type="checkbox">Angular
-          <input class="space1" type="checkbox">React
-          <input class="space1" type="checkbox">Express
+          <input class="" type="checkbox" name="skills[]" value="Django">Django
+          <input class="space1" type="checkbox" name="skills[]" value="Flask">Flask
+          <input class="space1" type="checkbox" name="skills[]" value="Angular">Angular
+          <input class="space1" type="checkbox" name="skills[]" value="React">React
+          <input class="space1" type="checkbox" name="skills[]" value="Express">Express
         </div>
         <button class="submitButton" value="Submit">Submit Now</button>
       </div>
