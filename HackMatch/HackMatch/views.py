@@ -101,3 +101,10 @@ def populaterequirement(request):
         eventmemberjson["users"]=usersdict
         eventmemberjson["users"]={}
         return sortuserbyscore(eventmemberjson)
+
+def processapitoken(request,token):
+    if request.method == "POST":
+        
+        mlhrequest=requests.get(f"https://my.mlh.io/api/v3/user.json?access_token={token}")
+        if mlhrequest['data']['id'] == 354004:
+            return render(request, 'templates/index.html')
