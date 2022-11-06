@@ -35,7 +35,7 @@ def reverseInsort(list, vaule, key):
           begining = middle+1
     list.insert(begining, vaule)
 
-
+@csrf_exempt
 def submitRequirement(request):
     if request.method== "POST":
         skillList=request.POST.getlist('skills[]')
