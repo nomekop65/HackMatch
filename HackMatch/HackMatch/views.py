@@ -92,9 +92,9 @@ def registerUser(request):
 
 def populaterequirement(request):
     if request.method== "POST":
-        skilllist=request.POST['skills']
-        skilllist=[i.lower() for i in skilllist]
-        eventmemberjson={"users":{},"requirement":skilllist}
+        skillList=request.POST.GET['skills']
+        skillList=[i.lower() for i in skillList]
+        eventmemberjson={"users":{},"requirement":skillList}
         usersqueryset= getAllUsers.filter()
         usersqueryset=usersqueryset.objects.values('id','stacks','languages','framework','proficiencyLevel','searchingForMembers','username')
         usersdict={i['id']:{"skills":[i['stacks']+i['languages']+i['framework']+['proficiencyLevel']],"searchingForMember":i['searchingForMember'],"username":i['username']} for i in usersqueryset}

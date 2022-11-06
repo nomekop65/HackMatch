@@ -15,6 +15,7 @@
         <P class="textToUser1">Find the right teammates for you!</P>
       </div>
       <form action="{% url 'submitRequirement'%}" method="post">
+        {% csrf_token %}
         <div class="input">
           <P class="textToUser">Are you looking for a...</P>
           <input class="choice" type="checkbox" name="skills[]" value="FrontEnd">FrontEnd Developer
