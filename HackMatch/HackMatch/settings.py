@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'HackMatch.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mssql',
+        'ENGINE': "sql_server.pyodbc",
         'NAME': 'hacknc',
         'USER': '',
         'PASSWORD': 'hacknc',
-        'HOST': 'DESKTOP-4D44HQS\SQLEXPRESS',
+        'HOST': "server\instance",
         'PORT': '',
     }
 }
