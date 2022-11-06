@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import environ
+
+
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,6 +37,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -73,17 +80,16 @@ WSGI_APPLICATION = 'HackMatch.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES={
-   'default':{
-      'ENGINE':'mssql',
-      'NAME':'DESKTOP-4D44HQS\SQLEXPRESS',
-      'USER':'DESKTOP-4D44HQS\amber',
-      'PASSWORD':'hacknc',
-      'HOST':'SQLEXPRESS',
-      'PORT':'1433',
-   }
+DATABASES = {
+    'default': {
+        'ENGINE': 'mssql',
+        'NAME': 'hacknc',
+        'USER': '',
+        'PASSWORD': 'hacknc',
+        'HOST': 'DESKTOP-4D44HQS\SQLEXPRESS',
+        'PORT': '',
+    }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
