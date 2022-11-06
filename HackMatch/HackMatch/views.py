@@ -29,6 +29,33 @@ def getAllFrameworks():
 def getAllLanguages():
     return language.objects.all()
 
+def reverseInsort(list, vaule, key):
+    begining=0
+    end = len(list)
+
+    while begining < end:
+        middle = (begining+end)//2
+
+        if key > len(list[middle][1]): 
+          end = middle
+        else: 
+          begining = middle+1
+    list.insert(begining, vaule)
+
+def sortuserbyscore(eventmemberjson):
+
+    #get user that need team and store in a list
+    eventneedteamdict={i:eventmemberjson["users"][i] for i in eventmemberjson["users"] if eventmemberjson["users"][i]["searchingForMember"]==True}
+    requirementSet=set(eventmemberjson["requirement"])
+    userScoreList=[]
+    for userid in eventneedteamdict:  
+        requirementMeetList = list(requirementSet.intersection(set(eventneedteamdict[userid]["skills"])))
+        print(userid)
+        print(requirementMeetList)
+        reverseInsort(userScoreList,(userid,requirementMeetList,eventneedteamdict[userid]["username"]), len(requirementMeetList)) #save user id and score as a tuple and sort greatest to lowest
+
+    return userScoreList
+
 def loginUser(request):
     if request.method == "POST":
         email = request.POST['email']
@@ -62,3 +89,15 @@ def registerUser(request):
         'form':form
     }
     return render(request, 'templates/register.html', context)
+
+def populaterequirement(request):
+    if request.method== "POST":
+        skilllist=request.POST['skills']
+        skilllist=[i.lower() for i in skilllist]
+        eventmemberjson={"users":{},"requirement":skilllist}
+        usersqueryset= getAllUsers.filter()
+        usersqueryset=usersqueryset.objects.values('id','stacks','languages','framework','proficiencyLevel','searchingForMembers','username')
+        usersdict={i['id']:{"skills":[i['stacks']+i['languages']+i['framework']+['proficiencyLevel']],"searchingForMember":i['searchingForMember'],"username":i['username']} for i in usersqueryset}
+        eventmemberjson["users"]=usersdict
+        eventmemberjson["users"]={}
+        return sortuserbyscore(eventmemberjson)

@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login_user/', views.loginUser, name = 'loginRequest'),
     path('register_user/', views.registerUser, name = 'registerRequest'),
+    path('submitrequirement/',views.populaterequirement)
 ]
